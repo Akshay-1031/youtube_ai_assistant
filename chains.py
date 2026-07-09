@@ -10,14 +10,8 @@ from langchain_core.messages import (
 
 import json
 
-# These should come from agent.py / tools.py
 from agent import llm_with_tools
 from tools import tool_mapping
-
-
-# ==========================================================
-# Execute a single tool
-# ==========================================================
 
 def execute_tool(tool_call):
     """Execute single tool call and return ToolMessage"""
@@ -42,10 +36,6 @@ def execute_tool(tool_call):
         tool_call_id=tool_call["id"]
     )
 
-
-# ==========================================================
-# Process Tool Calls
-# ==========================================================
 
 def process_tool_calls(messages):
     """Recursive tool call processor"""
@@ -77,10 +67,6 @@ def process_tool_calls(messages):
     ]
 
 
-# ==========================================================
-# Continue?
-# ==========================================================
-
 def should_continue(messages):
     """Check if another iteration is required"""
 
@@ -95,11 +81,6 @@ def should_continue(messages):
         )
 
     )
-
-
-# ==========================================================
-# Recursive Function
-# ==========================================================
 
 def _recursive_chain(messages):
     """Recursively process tool calls until completion"""
@@ -120,11 +101,6 @@ def _recursive_chain(messages):
 recursive_chain = RunnableLambda(
     _recursive_chain
 )
-
-
-# ==========================================================
-# Universal Chain
-# ==========================================================
 
 universal_chain = (
 
