@@ -1,0 +1,8 @@
+pytube
+youtube-transcript-api==1.1.0
+langchain-community==0.3.16
+langchain==0.3.23
+langchain-ollama
+yt-dlp
+streamlit
+python-dotenv
