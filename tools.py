@@ -8,17 +8,13 @@ from langchain_core.messages import HumanMessage
 from langchain_core.messages import ToolMessage
 import json
 
-
-# Suppress warnings
 import warnings
 warnings.filterwarnings("ignore")
 
-# Suppress pytube errors
 import logging
 pytube_logger = logging.getLogger('pytube')
 pytube_logger.setLevel(logging.ERROR)
 
-# Suppress yt-dlp warnings
 yt_dpl_logger = logging.getLogger('yt_dlp')
 yt_dpl_logger.setLevel(logging.ERROR) 
 from langchain_core.tools import tool
