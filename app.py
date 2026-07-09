@@ -21,16 +21,9 @@ Examples:
 """
 )
 
-# -----------------------------
-# Session State
-# -----------------------------
-
 if "history" not in st.session_state:
     st.session_state.history = []
 
-# -----------------------------
-# User Input
-# -----------------------------
 
 query = st.text_area(
     "Enter your prompt",
@@ -47,9 +40,6 @@ if clear:
     st.session_state.history = []
     st.rerun()
 
-# -----------------------------
-# Run Agent
-# -----------------------------
 
 if run:
 
@@ -82,9 +72,6 @@ if run:
 
                 st.error(str(e))
 
-# -----------------------------
-# Chat History
-# -----------------------------
 
 if st.session_state.history:
 
